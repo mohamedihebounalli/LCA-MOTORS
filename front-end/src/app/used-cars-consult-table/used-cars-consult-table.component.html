@@ -1,0 +1,81 @@
+<div class="row mx-6 my-3"  *ngIf="!toggleUsedCarsListDisplay">
+    <div class="col">
+      <div class="card">
+        <div class="table-responsive-lg mb-0">
+          <table
+            class="table align-middle mb-0 table-hover table-bordered"
+            style="background-color: white"
+          >
+            <thead class="bg-light">
+              <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Fabricant</th>
+                <th>Information</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let usedCar of usedCarList; let i = index">
+              <tr>
+                <td>{{i+1}}</td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="ms-3">
+                     <img width="100" src={{usedCar.carImageData}} alt="">
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p class="fw-bold mb-1">{{usedCar.brand}}</p>
+                  <p class="text-muted mb-0">{{usedCar.model}}</p>                  
+                </td>
+                <td>
+                  <p class="fw-bold mb-1">{{usedCar.carDescription}}</p>
+                </td>
+                
+                <td>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-3">
+                        <button
+                          type="button"
+                          class="btn btn-sm btn btn-success"
+                          (click)="updateUsedCar(usedCar)"
+                        >
+                          Modifier
+                        </button>
+                      </div>
+                      <div class="col-1"></div>
+                      <div class="col-3">
+                        <button
+                          type="button"
+                          class="btn btn-sm btn btn-warning"
+                          (click)="deleteUsedCar(usedCar)"
+                        >
+                          Supprimer
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center" *ngIf="!toggleUsedCarsListDisplay">
+    <div class="col-5"></div>
+    <div class="col">
+      <button
+        type="button"
+        class="btn btn btn-primary"
+        routerLink="/directeur-technique-dashboard/gerer-voiture-utilisee/ajouter-voiture">
+        Ajouter Voiture
+      </button>
+    </div>
+  </div>
+
+
+  <app-update-used-car-form *ngIf="toggleUsedCarsListDisplay" [usedCar]="updateUsedCarData"></app-update-used-car-form>

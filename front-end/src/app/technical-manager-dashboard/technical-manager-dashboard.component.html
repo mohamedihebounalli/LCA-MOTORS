@@ -1,0 +1,25 @@
+<section id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " routerLink="/directeur-technique-dashboard/gerer-voiture-utilisee">
+          <i class="bi bi-grid"></i>
+          <span>Directeur Technique Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" routerLink="/directeur-technique-dashboard/gerer-voiture-utilisee">
+          <i class="bi bi-menu-button-wide"></i><span>Gérer les voitures utilisees</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+      </li><!-- End Components Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" routerLink="/directeur-technique-dashboard/traiter-sav">
+          <i class="bi bi-menu-button-wide"></i><span>Traiter les demandes de service aprés-vente</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+      </li><!-- End Components Nav -->
+    </ul>
+
+  </section>
+  <router-outlet></router-outlet>

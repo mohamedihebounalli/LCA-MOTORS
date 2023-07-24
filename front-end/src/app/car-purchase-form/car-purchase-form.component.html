@@ -1,0 +1,142 @@
+<app-bread-crumb [title]="'Générer une demande d\'achat de voiture'"></app-bread-crumb>
+
+<section class="gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-10">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem">
+            <div class="row g-0">
+              <div class="col d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+                  <form [formGroup]="carPurchaseRegistrationForm" (ngSubmit)="registerCarPurchaseRequest()">
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                    
+                      <span class="h2 fw-bold mb-0">
+                        Générer une demande d'achat de voiture</span
+                      >
+                    </div>
+  
+                    <div class="row">
+                      <div class="col-md-5 mb-4">
+                        <div class="form-outline">
+                          <input
+                            type="text"
+                            id="form3Example1m"
+                            formControlName="ownerCIN"
+                            class="form-control form-control-lg"
+                          />
+                          <label class="form-label" for="form3Example1m"
+                            >CIN</label
+                          >
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5 mb-4">
+                        <div class="form-outline">
+                          <input
+                            type="text"
+                            formControlName="firstName"
+                            id="firstName"
+                            name="firstName"
+                            class="form-control form-control-lg"
+                          />
+                          <label class="form-label" for="firstName"
+                            >Nom</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col-md-5 mb-4">
+                        <div class="form-outline">
+                          <input
+                            type="text"
+                            id="lastName"
+                            formControlName="lastName"
+                            name="lastName"
+                            class="form-control form-control-lg"
+                          />
+                          <label class="form-label" for="lastName"
+                            >Prénom</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5 mb-4">
+                        <div class="form-outline">
+                          <input
+                            type="text"
+                            id="model"
+                            formControlName="model"
+                            name="model"
+                            class="form-control form-control-lg"
+                          />
+                          <label class="form-label" for="model">Marque & modèle de voiture</label>
+                        </div>
+                      </div>
+                      <div class="col-md-5 mb-4">
+                        <div class="form-outline">
+                          <input
+                            type="text"
+                            id="email"
+                            formControlName="email"
+                            name="email"
+                            class="form-control form-control-lg"
+                          />
+                          <label class="form-label" for="email">Email</label>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="row">
+                        <div class="col-md-5 mb-4">
+                          <div class="form-outline">
+                            <input
+                              type="text"
+                              id="address"
+                              formControlName="address"
+                              name="address"
+                              class="form-control form-control-lg"
+                            />
+                            <label class="form-label" for="address">Adresse</label>
+                          </div>
+                        </div>
+                        <div class="col-md-5 mb-4">
+                          <div class="form-outline">
+                            <input
+                              type="text"
+                              id="phoneNumber"
+                              formControlName="phoneNumber"
+                              name="phoneNumber"
+                              class="form-control form-control-lg"
+                            />
+                            <label class="form-label" for="phoneNumber">Téléphone</label>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="row justify-content-center align-items-center">
+                      <div class="col-12"></div>
+  
+                      <div class="col">
+                        <div class="pt-1 mb-4">
+                          <button
+                            class="btn btn-dark btn-lg btn-block"
+                            type="submit"
+                            [disabled]="!carPurchaseRegistrationForm.valid"
+                          >
+                            Générer demande
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

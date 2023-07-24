@@ -1,0 +1,85 @@
+<app-bread-crumb [title]="'Connexion'"></app-bread-crumb>
+    <section class="vh-100 gradient-custom">
+        <div class="container py-3 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+              <div class="card" style="border-radius: 1rem">
+                <div class="row g-0">
+                  <div class="col-md-6 col-lg-5 d-none d-md-block">
+                    <img
+                      src="https://www.linkpicture.com/q/LPic646e422a20afe213091852.png"
+                      alt="formulaire de login"
+                      class="img-fluid"
+                      style="border-radius: 1rem 0 0 1rem"
+                    />
+                  </div>
+                  <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                    <div class="card-body p-4 p-lg-5 text-black">
+                     
+                        <div class="d-flex align-items-center mb-3 pb-1">
+                         
+                          <span class="h1 ">Se Connecter</span>
+                        </div>
+                        <form [formGroup]="form" (ngSubmit)="authentificate()"
+                        >
+                        <div class="row"></div>
+      
+                        <div class="form-outline mb-4">
+                          <input
+                            type="email"
+                            formControlName="email"
+                            name="email"
+                            id="email"
+                            name="email"
+                            class="form-control form-control-lg input-sm"
+                            placeholder="Email"
+                      
+                          
+                          />
+                          <label class="form-label" for="email">Email</label>
+                        
+                        </div>
+      
+                        <div class="form-outline mb-4">
+                          <input
+                            type="password"
+                            formControlName="password"
+                            name="password"
+                            id="password"
+                            name="email"
+                            class="form-control form-control-lg input-sm"                           
+                            placeholder="Mot de passe"
+                          />
+                          <label class="form-label" for="password"
+                            >Mot de passe</label
+                          >
+                        </div>
+      
+                        <div class="pt-1 mb-4">
+                          <button
+                            class="btn btn-dark btn-lg btn-block"
+                            type="submit" 
+                            [disabled]="form.invalid"
+                              
+                          >
+                            Se Connecter
+                          </button>
+                        </div>
+      
+                     
+                        <p class="mb-5 pb-lg-2" style="color: #393f81">
+                          Vous n'avez pas de compte ?
+                          <a routerLink="/inscription" style="color: #393f81"
+                            >Inscrivez-vous ici</a
+                          >
+                        </p>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      

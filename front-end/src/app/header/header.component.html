@@ -1,0 +1,81 @@
+ <!-- Header Section Begin -->
+
+ <header class="header">
+    <div class="header__top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 col-md-7">
+            <div class="header__top__left">
+              <p>
+                Vous êtes invités à visiter notre salle d'exposition
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-5">
+            <div class="header__top__right">
+              <div class="header__top__links">
+                <a *ngIf="!isLoggedIn()" routerLink="/connexion">Se connecter</a>
+                <a *ngIf="isLoggedIn()" routerLink="/accueil"  (click)="logout()">Se déconnecter</a>
+          
+                <a *ngIf="!isLoggedIn()" routerLink="/inscription">S'inscrire</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-md-3">
+          <div class="header__logo">
+            <a href="/accueil"
+              ><img src="../../../assets/img/lca-motots.png" alt="" width="90" height="70"
+            /></a>
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-6 my-auto">
+          <nav class="header__menu mobile-menu">
+            <ul>
+              <li ><a routerLink="/accueil">Accueil</a></li>
+              <li><a routerLink="/voiture-chery">Chery Showroom</a></li>
+              <li><a routerLink="/voiture-utilisee">Voitures Occasion</a></li>
+              <li>
+                <a>Demandes</a>
+                <ul class="dropdown">
+                  <li><a routerLink="/demande-service-apres-vente">Service Après-Vente</a></li>
+                  <li><a routerLink="/demande-achat-voiture">Achat Voiture Chery</a></li>
+                </ul>
+              </li>
+              <li><a routerLink="/actualites">Actualité</a></li>
+              <li *ngIf="isUserAdmin()" ><a  routerLink="/admin-dashboard/gerer-comptes">Dashboard</a>
+                <ul class="dropdown">
+                  <li><a routerLink="/admin-dashboard/gerer-comptes">Gérer les comptes</a></li>
+                </ul>
+              </li>
+              <li *ngIf="isUserSalesManager()"><a routerLink="/directeur-commercial-dashboard/gerer-voiture-chery">Dashboard</a>
+                <ul class="dropdown">
+                  <li><a routerLink="/directeur-commercial-dashboard/gerer-voiture-chery">Gérer les voiture Chery</a></li>
+                  <li><a routerLink="/directeur-commercial-dashboard/planifier-vente">Planfier vente</a></li>
+                </ul>
+              </li>
+              <li *ngIf="isUserTechnicalManager()"><a routerLink="/directeur-technique-dashboard/gerer-voiture-utilisee">Dashboard</a>
+                <ul class="dropdown">
+                  <li><a routerLink="/directeur-technique-dashboard/gerer-voiture-utilisee">Gérer les voiture occasion</a></li>
+                  <li><a routerLink="/directeur-technique-dashboard/traiter-sav">Traiter les demandes de SAV</a></li>
+                </ul>
+              </li>
+             
+            </ul>
+          </nav>
+        </div>
+        <div class="col-lg-1 col-md-1 my-auto">
+          <div class="header__nav__option">
+          </div>
+        </div>
+      </div>
+      <div class="canvas__open"><i class="fa fa-bars"></i></div>
+    </div>
+  </header>
+  
+  <!-- Header Section End -->
+  

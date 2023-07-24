@@ -1,0 +1,137 @@
+
+<div class="container py-3 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem">
+          <div class="row g-0">
+            <div class="col d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+                <div class="d-flex align-items-center mb-3 pb-1">
+                  <span class="h1 fw-bold mb-0"> Modifier compte</span>
+                </div>
+                
+                <form [formGroup]="accountUpdateForm" (ngSubmit)="updateAccountData()">
+                  <div class="row">
+                      <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input
+                          type="text"
+                          formControlName="firstName"
+                          name="firstName"
+                          id="firstName"
+                          class="form-control form-control-lg"
+                   
+                        />
+                        <label class="form-label" for="firstName"
+                          >Nom</label
+                        >
+                      </div>
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <input
+                            type="text"
+                            formControlName="lastName"
+                            name="lastName"
+                            id="lastName"
+                            class="form-control form-control-lg"
+                        
+                          />
+                          <label class="form-label" for="lastName"
+                            >Prénom</label
+                          >
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input
+                          type="date"
+                          formControlName="dateOfBirth"
+                          name="dateOfBirth"
+                          id="dateOfBirth"
+                          class="form-control form-control-lg"
+                
+                        />
+                        <label class="form-label" for="dateOfBirth"
+                          >Date de naissance</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input
+                          type="text"
+                          id="phoneNumber"
+                          formControlName="phoneNumber"
+                          name="phoneNumber"
+                          class="form-control form-control-lg"
+                       
+                        />
+                        <label class="form-label" for="phoneNumber">Téléphone</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="email"
+                      formControlName="email"
+                      name="email"
+                      id="email"
+                      class="form-control form-control-lg"
+                     
+                      
+                    />
+                    <label class="form-label" for="email"
+                      >Email</label
+                    >
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="text"
+                      formControlName="password"
+                      name="password"
+                      id="password"
+                      class="form-control form-control-lg"
+                    
+                    />
+                    <label class="form-label" for="password"
+                      >Mot de passe</label
+                    >
+                  </div>
+
+                  <div class="form-outline mb-4">
+                  <label class="form-label" for="role"
+                    >Role : </label>
+                  <select class="form-select form-select-lg mb-3" aria-label="Default select example" name="role" id="role" formControlName="role">
+                    <option selected value="">Choisir le role</option>
+                    <option value="CUSTOMER">Client</option>
+                    <option value="ADMIN">Admin</option>
+                    <option value="TECHNICAL_MANAGER">Directeur Technique</option>
+                    <option value="SALES_MANAGER">Directeur Commerical</option>
+                  </select>
+                 
+                  </div>
+                  
+
+                  <div class="pt-1 mb-4">
+                    <button
+                      [disabled]="!accountUpdateForm.valid"
+                      class="btn btn-dark btn-lg btn-block"
+                      type="submit"
+                    >
+                      Modifier compte
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

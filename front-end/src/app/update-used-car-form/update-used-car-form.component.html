@@ -1,0 +1,123 @@
+
+<div class="container py-3 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col col-xl-10">
+      <div class="card" style="border-radius: 1rem">
+        <div class="row g-0">
+          <div class="col d-flex align-items-center">
+            <div class="card-body p-4 p-lg-5 text-black">
+              <form [formGroup]="usedCarUpdateForm"  (ngSubmit)="updateUsedCar()" >
+                <div class="row">
+                <div class="col-md-12 mb-4">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      formControlName="ownerFullName"
+                      name="ownerFullName"
+                      id="ownerFullName"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label" for="ownerFullName"
+                      >Nom</label
+                    >
+                  </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="ownerCIN"
+                      formControlName="ownerCIN"
+                      name="ownerCIN"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label" for="ownerCIN"
+                      >CIN</label
+                    >
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      id="phoneNumber"
+                      formControlName="phoneNumber"
+                      name="phoneNumber"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label" for="phoneNumber">Téléphone</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline mb-4">
+                    <input
+                      type="email"
+                      formControlName="ownerEmail"
+                      name="ownerEmail"
+                      id="ownerEmail"
+                      class="form-control form-control-lg"
+                      
+                    />
+                    <label class="form-label" for="ownerEmail"
+                      >Email</label
+                    >
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                      type="text"
+                      formControlName="manufacturer"
+                      name="manufacturer"
+                      id="manufacturer"
+                      class="form-control form-control-lg"
+                    />
+                    <label class="form-label" for="manufacturer">Marque & modèle</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-outline mb-4">
+          
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="carDescription">Description du voiture :</label>
+                  <textarea class="form-control"
+                  formControlName="carDescription"
+                  name="carDescription"
+                  id="carDescription" rows="3"></textarea>
+                </div>
+
+                
+                <label class="form-label" for="customFile"
+                >Publier une photo (optionnel)</label
+              >
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="image">Upload</label>
+                <input type="file" class="form-control" (change)="uploadImage($event)" name="image" id="image">
+              </div>
+              </div>
+
+              <div class="pt-1 mb-4">
+                <button
+                  class="btn btn-dark btn-lg btn-block"
+                  type="submit"
+                  [disabled]="!usedCarUpdateForm.valid"
+                >
+                   Modifier voiture 
+                </button>
+              </div>
+              
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

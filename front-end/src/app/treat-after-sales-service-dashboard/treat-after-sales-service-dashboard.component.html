@@ -1,0 +1,109 @@
+<section class="gradient-custom">
+    <div class="container py-3 h-100" [hidden]="false">
+      <div class="card mx-8 my-5" style="background-color: aliceblue">
+        <div class="card-body">
+          <div class="row">
+            <h3 >Traiter les demandes des services aprés-vente</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row mx-6 my-3">
+        <div class="col">
+          <div class="card">
+            <div class="table-responsive-lg mb-0">
+              <table
+                class="table align-middle mb-0 table-hover table-bordered"
+                style="background-color: white"
+              >
+                <thead class="bg-light">
+                  <tr>
+                    <th>#</th>
+                    <th>Cin</th>
+                    <th>Nom & Prénom</th>
+                    <th>Marque & modèle</th>
+                    <th>Description des problèmes</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let afterSaleServiceRequest of afterSaleServiceRequestList ; let i = index">
+                  <tr>
+                    <td>{{i+1}}</td>
+                    <td>
+                      <p class="fw-bold mb-1">{{afterSaleServiceRequest.cin}}</p>
+                            
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                            <p class="fw-bold mb-1">{{afterSaleServiceRequest.firstName}}</p>
+                            <p class="text-muted mb-0">{{afterSaleServiceRequest.lastName}}</p>   
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-bold mb-1">{{afterSaleServiceRequest.manufacturer}}</p>
+                            
+                    </td>
+                    <td>
+                      <p class="fw-bold mb-1">{{afterSaleServiceRequest.description}}</p>
+                    </td>
+                  
+                    <td>
+                        <div class="container">
+                            <div class="row">
+                              <div class="col-3">
+
+                                <button
+                                type="button"
+                                class="btn btn-sm btn btn-success"
+                                *ngIf="afterSaleServiceRequest.status === 'Approved'"
+                                [disabled]="(afterSaleServiceRequest.status == 'Approved')"
+                              >
+                              Accepter
+                              </button>
+                                <button
+                                  type="button"
+                                  class="btn btn-sm btn btn-success"
+                                  *ngIf="!(afterSaleServiceRequest.status == 'Approved')"
+                                  (click)="acceptAfterSaleServiceRequest(afterSaleServiceRequest)"
+                                >
+                                 Accepter
+                                </button>
+                              </div>
+                               <div class="col-3"></div>
+                              <div class="col-3">
+                                <button
+                                *ngIf="!(afterSaleServiceRequest.status == 'Approved')"
+                                  type="button"
+                                  class="btn btn-sm btn btn-warning"
+                                  (click)="deleteAfterSaleServiceRequest(afterSaleServiceRequest)"
+                                >
+                                  Refuser  
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row justify-content-center">
+        <div class="col-5"></div>
+        <div class="col">
+          <button
+            type="button"
+            class="btn btn btn-primary"
+            (click)="navigateToPage()"
+          >
+            Ajouter Voiture
+          </button>
+        </div>
+      </div> -->
+    </div>
+  </section>
+  <router-outlet></router-outlet>
+  
